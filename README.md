@@ -46,4 +46,8 @@ npm start                      # Starts frontend at http://localhost:3000
 6. Click the 💬 button to chat with the MedAI Assistant
 
 ---
+
+## PPT Presentation -
+
+https://gamma.app/docs/Predicting-Hospital-Readmission-Risk-60l9v3o00zvgpap?mode=doc
 **For hackathon/demo only. Not for real medical use.** 
