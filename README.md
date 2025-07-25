@@ -1,51 +1,49 @@
-# Diabetes-main
-Team(SC1)3_08
+# MedAI – Hospital Readmission Risk Predictor
 
-# Members name - 
+A modern, full-stack web app that predicts hospital readmission risk using machine learning. Built for hackathons with React, Tailwind CSS, FastAPI, and scikit-learn.
 
-1. GOURAB BAIRAGI - 23CSEDS066 - 23UG010676
+## Features
+- Landing page with branding and dark/light mode
+- Signup & Login (with validation)
+- Dashboard: patient info form, AI prediction, feature importance chart
+- Medical Q&A chatbot (FAQ-based, easy to upgrade to real AI)
+- Responsive, modern UI (hospital blue theme)
 
-2. SONALI SUBHADARSHINI SAHOO - 23CSE535 - 23UG010618
+## Tech Stack
+- **Frontend:** React, Tailwind CSS, Framer Motion, Recharts, Lucide Icons
+- **Backend:** FastAPI (Python), SQLite, scikit-learn, pandas, SQLAlchemy
+- **ML Model:** Trained on healthcare_dataset.csv
 
-3. BIBHU DEVI PADHY - 23CSEAIML126 - 23UG010109
+## Setup Instructions
 
-4. PURNIMA MAHATO - 23CSE550 - 23UG010633
+### 1. Backend
+```bash
+cd backend
+python -m venv venv
+# Activate venv:
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
+pip install -r requirements.txt  # (or install FastAPI, scikit-learn, etc. manually)
+python train_model.py           # Trains and saves model.pkl
+uvicorn main:app --reload      # Starts backend at http://localhost:8000
+```
 
-# Predicting Impact on Readmission Rates for Patients Hospitalized with Diabetes
+### 2. Frontend
+```bash
+cd medai-frontend
+npm install
+npm start                      # Starts frontend at http://localhost:3000
+```
 
-Data Source: UCI Dataset Link
+## Usage (Demo Steps)
+1. Open the app in your browser (http://localhost:3000)
+2. Signup for a new account
+3. Login
+4. Enter patient info and click "Predict Risk"
+5. View AI result and feature chart
+6. Click the 💬 button to chat with the MedAI Assistant
 
-Dataset name: Diabetes 130-US hospitals for years 1999-2008 Data Set
-
-### Problem Statement -
-
-During past decades, hospital readmissions have been the subject of retrospective surveys and prospective trials with a view to their prevention. Hospital readmission is when a discharged patient gets readmitted to a hospital within a certain period. The need for hospital readmission for certain conditions indicates hospital quality. Identifying patients at high risk early in hospitalization will help to reduce the readmission rate, in that hospitals can focus on preparing readmission for patients at high risk to shorten the length of readmission. 
-To identify the factors that lead to the high readmission rate of diabetic patients within 30 days post discharge and correspondingly to predict the high-risk diabetic-patients who are most likely to get readmitted within 30 days so that the quality of care can be improved along with improved patient’s experience, health of the population and reduce costs by lowering readmission rates. Also, to identify the medicines that are the most effective in treating diabetes.
-
-### Goal of Analysis.
-
-The goal of the analysis is to find the determining factors that lead to higher readmission and correspondingly being able to predict which patients will get readmitted. Therefore, we proposed two research questions: 
-
-1) What methods can we use to best predict hospital readmission in this dataset? 
-
-2) What are the strongest predictors of hospital readmission in diabetic patients? 
-
-### Method & Result -
-
-We used Logistic Regression, Decision Tree, Random Forest, and XGboost classifiers to predict the readmission rate. Each algorithm was evaluated using 10-fold stratified cross-validation. All of our algorithms are evaluated using the area-under-the-curve (AUC), which is equivalent to the c-statistic in the binary classification scenario. In comparing of four models, it showed the XGBoost worked the best for predicting the admission rate, which achieves the highest accuracy as 0.94, with 0.61 on AUC, and the second-best model is Random Forest, which achieves 0.92 accuracy and 0.94 on AUC. In this study, we also identified the most important factors as the time_in_hospital and number of inpatient stays, number of diagnoses, which appears to associate with the severity of the disease. 
-
-Background: Diabetes Mellitus (DM) is a chronic disease where the blood has high sugar level. 
-It can occur when the pancreas does not produce enough insulin, or when the body cannot effectively use the insulin it produces (WHO). 
-Diabetes is a progressive disease that can lead to a significant number of health complications and profoundly reduce the quality of life. 
-While many diabetic patients manage the health complication with diet and exercise, some require medications to control blood glucose level. 
-As published by a research article named “The relationship between diabetes mellitus and 30-day readmission rates”, it is estimated that 9.3% of the population in the United States have diabetes mellitus (DM), 28% of which are undiagnosed. In recent years, government agencies and healthcare systems have increasingly focused on 30-day readmission rates to determine the complexity of their patient populations and to improve quality. Thirty-day readmission rates for hospitalized patients with DM are reported to be between 14.4 and 22.7%, much higher than the rate for all hospitalized patients (8.5–13.5%).
-
-Impact on business: Hospital readmission is an important contributor to total medical expenditures and is an emerging indicator of quality of care. Diabetes, similar to other chronic medical conditions, is associated with increased risk of hospital readmission. As mentioned in the article “Correction to: Hospital Readmission of Patients with Diabetes”, hospital readmission is a high-priority health care quality measure and target for cost reduction, particularly within 30 days of discharge. The burden of diabetes among hospitalized patients is substantial, growing, and costly, and readmissions contribute a significant portion of this burden. Reducing readmission rates among patients with diabetes has the potential to greatly reduce health care costs while simultaneously improving care. Our aim is to provide some insights into the risk factors for readmission and also to identify the medicines that are the most effective in treating diabetes.
-
-Variable identification:
-1. Independent variables (49): encounter_id, patient_nbr, race, gender, age, weight, admission_type_id, discharge_disposition_id, admission_source_id, time_in_hospital, payer_code, medical_specialty, num_lab_procedures, num_procedures, num_medications, number_outpatient, number_emergency, number_inpatient, diag_1, diag_2, diag_3, number_diagnoses, max_glu_serum, A1Cresult, metformin, repaglinide, nateglinide, chlorpropamide, glimepiride, acetohexamide, glipizide, glyburide, tolbutamide, pioglitazone, rosiglitazone, acarbose, miglitol, troglitazone, tolazamide, examide, citoglipton, insulin, glyburide-metformin,  glipizide-metformin, glimepiride-pioglitazone, metformin-rosiglitazone, metformin-pioglitazone, change, diabetesMed.
-2. Dependent variable (1): readmitted (Categorical)
-
-## PPT Presentation -
-
-https://gamma.app/docs/Predicting-Hospital-Readmission-Risk-60l9v3o00zvgpap?mode=doc
+---
+**For hackathon/demo only. Not for real medical use.** 
