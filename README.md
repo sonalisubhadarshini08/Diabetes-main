@@ -2,6 +2,19 @@
 
 A modern, full-stack web app that predicts hospital readmission risk using machine learning. Built for hackathons with React, Tailwind CSS, FastAPI, and scikit-learn.
 
+# Team(SC_1)3_08 and Team-ID :
+
+Members Name -
+
+1. GOURAB BAIRAGI - 23CSEDS066(23UG010676)
+
+2. SONALI SUBHADARSHINI SAHOO - 23CSE535(23UG010618)
+
+3. PURNIMA MAHATO - 23CSE550(23UG010633)
+
+4. BIBHU DEVI PADHY - 23CSEAIML126(23UG010910676)
+
+   
 ## Features
 - Landing page with branding and dark/light mode
 - Signup & Login (with validation)
